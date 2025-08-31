@@ -11,7 +11,8 @@ done
 
 
 mkdir -p ~/.bin
-curl -L -o ~/.bin https://github.com/Phaserbeam/julia-auditor/releases/latest/download/auditor
+curl -OL https://github.com/Phaserbeam/julia-auditor/releases/latest/download/auditor
+mv ./auditor ~/.bin
 chmod +x ~/.bin/auditor
 
 if $INSTALL_NVIM; then
