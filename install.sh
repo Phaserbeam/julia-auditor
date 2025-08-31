@@ -11,7 +11,7 @@ done
 
 
 mkdir -p ~/.bin
-curl -L -O https://github.com/Phaserbeam/julia-auditor/releases/latest/download/auditor
+curl -L -o ~/.bin/auditor https://github.com/Phaserbeam/julia-auditor/releases/latest/download/auditor
 mv ./auditor ~/.bin
 chmod +x ~/.bin/auditor
 
