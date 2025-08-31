@@ -16,7 +16,7 @@ chmod +x ~/.bin/julia-auditor
 
 if $INSTALL_NVIM; then
   mkdir -p ~/.config/nvim
-  echo "vim.keymap.set('n', '<leader>j', '<cmd>silent ! ~/.bin/julia-auditor %<cr><cmd>edit<cr>',
+  echo "vim.keymap.set('n', '<leader>ja', '<cmd>silent ! ~/.bin/julia-auditor %<cr><cmd>edit<cr>',
   { desc = 'Audit file' })" >> ~/.config/nvim/init.lua
 fi
 
