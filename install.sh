@@ -13,6 +13,7 @@ done
 mkdir -p ~/.bin
 curl -L -o ~/.bin/julia-auditor https://github.com/Phaserbeam/julia-auditor/releases/latest/download/julia-auditor
 chmod +x ~/.bin/julia-auditor
+
 if $INSTALL_NVIM; then
   mkdir -p ~/.config/nvim
   echo "vim.keymap.set('n', '<leader>j', '<cmd>silent ! ~/.bin/julia-auditor %<cr><cmd>edit<cr>',
