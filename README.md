@@ -1,5 +1,5 @@
 # Auditor
-Auditor is a simple program that scans a file (presumably Julia) and appends code to print all variables declared. A video below demos how to use Auditor via the terminal and Neovim: 
+Auditor is a simple program, built for MacOS (I'll make a binary soon enough for Linux), that scans a file (presumably Julia) and appends code to print all variables declared. A video below demos how to use Auditor via the terminal and Neovim: 
 
 https://github.com/user-attachments/assets/536d1013-e86a-4466-a897-0a8a53935eee
 
