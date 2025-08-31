@@ -1,9 +1,37 @@
-# julia-var-logger
-(NOTE: THIS IS ONLY FOR SINGLE FUNCTION FILES)
+# Auditor
+Auditor is a simple program that scans a file (presumably Julia) and appends code to print all variables declared. A video below demos how to use Auditor via the terminal and Neovim: 
 
-This program can take as input a file, to append logging material. By default, it scans the file for all declared variables-- note that there must be a space before and after equal signs -- and then appends println() at the bottom of the file. The program will create an exit-code, which just tells the program what to cut so that it doesn't create a bunch of unnecessary  println statements. For first time use, make sure that your file has no end at the bottom. In order to use this, call the program and add your file as an argument (i.e. ./jvl foo.jl). Note that having 'end' at the end of your file, without  will mess with it. It is, however, recommended to add this to a vim config so that you can easily run it.
-Running the below command will add the program to ~/.bin and append a vim keybind ( space + j ) to your ~/.config/nvim/init.lua. 
+https://github.com/user-attachments/assets/536d1013-e86a-4466-a897-0a8a53935eee
+
+## Installation:
+You can either directly integrate Auditor into Neovim or simply download the binary and integrate into an IDE of your choosing/use it from the terminal.
+
+**Installation to Neovim:**
+Installing this on Neovim is pretty easy, you just have to run the command below which installs the binary to ~/.bin/ and appends a keybind, <leader>j, to Neovim's init.lua.  
 ```
-curl | bash
+bash <(curl -s https://github.com/Phaserbeam/julia-auditor/install.sh)
 ```
-Feel free to add requests and stuff, I'm pretty happy to add whatever mostly. One thing to note is that this is made for single function files, so if you have multiple functions in one file you're going to run into some issues. You can fix it or ask me to :)
+The above command assumes that you're config is located in ~/.config/ and will create it if it doesn't exist, however in the case in which your config is located elsewhere simply copy and paste the following piece of code into your init.lua:
+```
+vim.keymap.set('n', '<leader>j', '<cmd>silent ! ~/.bin/auditor %<cr><cmd>edit<cr>',
+  { desc = 'Audit file' })
+
+```
+
+**Using with terminal**
+To install for terminal (or other) use, simply run the below command which installs the binary to ~/.bin.
+```
+bash <(curl -s https://github.com/Phaserbeam/julia-auditor/julia-auditor)
+```
+If ~/.bin isn't in your path add the following line to your .bashrc/.zshrc:
+```
+export PATH=~/.bin:$PATH
+```
+I use Neovim, but I'm sure you can figure out how to add a similar functionality to your favorite IDE.
+
+## Known Issues
+It should be noted that Auditor is pretty dumb right now, and thus it really only works in single function files.... if someone does want this I'm happy to add it but otherwise one function files it is.
+
+## Contributing
+Feel free to open a pull request or issue. Build process is nonexistent :)
+If you have any questions feel free to reach out!
