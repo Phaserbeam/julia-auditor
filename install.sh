@@ -11,13 +11,13 @@ done
 
 
 mkdir -p ~/.bin
-curl -L -o ~/.bin/auditor https://github.com/Phaserbeam/julia-auditor/releases/latest/download/auditor
+curl -L -o ~/.bin/julia-auditor https://github.com/Phaserbeam/julia-auditor/releases/latest/download/julia-auditor
 mv ./auditor ~/.bin
-chmod +x ~/.bin/auditor
+chmod +x ~/.bin/julia-auditor
 
 if $INSTALL_NVIM; then
   mkdir -p ~/.config/nvim
-  echo "vim.keymap.set('n', '<leader>j', '<cmd>silent ! ~/.bin/auditor %<cr><cmd>edit<cr>',
+  echo "vim.keymap.set('n', '<leader>j', '<cmd>silent ! ~/.bin/julia-auditor %<cr><cmd>edit<cr>',
   { desc = 'Audit file' })" >> ~/.config/nvim/init.lua
 fi
 
